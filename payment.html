@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Slot Booking</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  background-image: url(1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px black;
+  margin-top: 110px;
+  
+}
+
+h1 {
+  text-align: center;
+  color: #45a049;
+  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+.time-slots {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 20PX;
+  
+}
+
+.time-slot {
+  border: 2px solid #007bff;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px black;
+  
+}
+.time-slot:hover
+{
+  background-color: #7aafe8;
+}
+ 
+
+.doctor-name {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-left: 160px;
+  margin-bottom: 40PX;
+}
+/* Define the animation */
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Apply the animation to the element */
+.blinking-text {
+  animation: blink 1s infinite; /* 1s for 1 second interval */
+}
+.payment-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow:5px 5px 10px black;
+    width: 400px;
+    font-size: 15px;
+  }
+  .payment-method {
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .payment-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="blinking-text"><h1>ENT Appointment</h1></div>
+
+    <form action="connect.php" method="post">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="appointmentDate">Select Date:</label>
+      <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+      <label for="appointmentTime">Select Time Slot:</label>
+      
+        
+        <div class="time-slots">
+        <div class="time-slot" onclick="showDoctorName(' Sonali Joshi')">10AM-1PM</div>
+        <div class="time-slot" onclick="showDoctorName(' Hemanth Shah')">2PM-6PM</div>
+        <div class="time-slot" onclick="showDoctorName(' Ashitosh Sinha')">7PM-10PM</div>
+        <!-- Add more time slots here -->
+        <!-- Add more options as needed -->
+        </div>
+        <div class="doctor-name" id="doctorName" input type="text" id="name" name="name" required>
+        </div>
+
+      </select>
+ 
+      <h2 style="font-size: 18px;">Select Payment Method</h2>
+    <div class="payment-method">
+      <label>
+        <input type="radio" name="paymentMethod" value="card" checked>
+        Credit/Debit Card
+      </label>
+    </div>
+    <div class="payment-method">
+      <label>
+        <input type="radio" name="paymentMethod" value="upi">
+        UPI
+      </label>
+    </div>
+    <div class="payment-details" id="cardDetails">
+      <h3 style="font-size: 18px;">Card Details</h3>
+      
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required>
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+        <button class="payment-button" style="margin-bottom: 15px; ">Pay Now</button>
+         
+      
+    </div>
+    <div class="payment-details" id="upiDetails" style="display: none;">
+      <h3 style="font-size: 18px;">UPI Details</h3>
+      <form>
+        <label for="upiId">UPI ID:</label>
+        <input type="text" id="upiId" name="upiId" required>
+        <button class="payment-button">Pay Now</button>
+         
+    
+    </div>
+  
+      
+ 
+    
+
+
+      <script>
+        function showDoctorName(doctorName) {
+      const doctorNameElement = document.getElementById('doctorName');
+      doctorNameElement.textContent = `Doctor: ${doctorName}`;
+    }
+    
+      </script>
+
+<script>
+  const paymentMethodRadios = document.querySelectorAll('input[name="paymentMethod"]');
+  const cardDetails = document.getElementById('cardDetails');
+  const upiDetails = document.getElementById('upiDetails');
+  
+  paymentMethodRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (radio.value === 'card') {
+        cardDetails.style.display = 'block';
+        upiDetails.style.display = 'none';
+      } else if (radio.value === 'upi') {
+        cardDetails.style.display = 'none';
+        upiDetails.style.display = 'block';
+      }
+    });
+  });
+</script>
+
+
+      <button type="submit">Book Appointment</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME PAGE</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  <style>
+
+footer{
+    /* position: fixed; */
+    background: #063f78;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  footer::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100px;
+    height: 1px;
+    width: 100%;
+    background: #AFAFB6;
+  }
+  footer .content{
+    max-width: 1250px;
+    margin: auto;
+    padding: 30px 40px 40px 40px;
+  }
+  footer .content .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .content .top .logo-details{
+    color: #fff;
+    font-size: 30px;
+  }
+  .content .top .media-icons{
+    display: flex;
+  }
+  .content .top .media-icons a{
+    height: 40px;
+    width: 40px;
+    margin: 0 8px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+  .top .media-icons a:nth-child(1){
+    background: #4267B2;
+  }
+  .top .media-icons a:nth-child(1):hover{
+    color: #4267B2;
+    background: #fff;
+  }
+  .top .media-icons a:nth-child(2){
+    background: #1DA1F2;
+  }
+  .top .media-icons a:nth-child(2):hover{
+    color: #1DA1F2;
+    background: #fff;
+  }
+  .top .media-icons a:nth-child(3){
+    background: #E1306C;
+  }
+  .top .media-icons a:nth-child(3):hover{
+    color: #E1306C;
+    background: #fff;
+  }
+  .top .media-icons a:nth-child(4){
+    background: #0077B5;
+  }
+  .top .media-icons a:nth-child(4):hover{
+    color: #0077B5;
+    background: #fff;
+  }
+  .top .media-icons a:nth-child(5){
+    background: #FF0000;
+  }
+  .top .media-icons a:nth-child(5):hover{
+    color: #FF0000;
+    background: #fff;
+  }
+  footer .content .link-boxes{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 5 - 10px);
+  }
+  .content .link-boxes .box .link_name{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px; 
+    /* position: relative; */
+  }
+  .link-boxes .box .link_name::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 35px;
+    background: #fff;
+  }
+  .content .link-boxes .box li{
+    margin: 6px 0;
+    list-style: none;
+  }
+  .content .link-boxes .box li a{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.4s ease
+  }
+  .content .link-boxes .box li a:hover{
+    opacity: 1;
+    text-decoration: underline;
+  }
+  .content .link-boxes .input-box{
+    margin-right: 55px;
+  }
+  .link-boxes .input-box input{
+    height: 40px;
+    width: calc(100% + 55px);
+    outline: none;
+    border: 2px solid #AFAFB6;
+    background: #140B5C;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 15px;
+    color: #fff;
+    margin-top: 5px;
+  }
+  .link-boxes .input-box input::placeholder{
+    color: #AFAFB6;
+    font-size: 16px;
+  }
+  .link-boxes .input-box input[type="button"]{
+    background: #fff;
+    color: #140B5C;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 4px 0;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+  .input-box input[type="button"]:hover{
+    opacity: 1;
+  }
+  footer .bottom-details{
+    width: 100%;
+    background: #063f78;
+  }
+  footer .bottom-details .bottom_text{
+    max-width: 1250px;
+    margin: auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a{
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+  }
+  .bottom-details .bottom_text a:hover{
+    opacity: 1;
+    text-decoration: underline;
+  }
+  .bottom-details .bottom_text a{
+    margin-right: 10px;
+  }
+
+  .slider-container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            
+        }
+        
+        .card-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+            
+        }
+        
+        .card1 {
+            flex: 0 0 25%;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 5px 5px 10px black;
+            margin-right: 20px;
+        }
+        
+        .card1 img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 50%;
+            margin-left: 30px;
+        }
+        
+        .slider-controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+           
+        .container3 {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Initially hide the review form */
+
+        }
+
+        .button-container3 {
+            text-align: center;
+            margin-top: 1px;
+            margin-bottom: 50px;
+        }
+
+        .btn-open-form {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-open-form:hover {
+            background-color: #0056b3;
+        }
+
+        /* Style the form elements as needed */
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+          
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+        
+         /* Style the form container */
+          
+      
+  </style>
+  
+    
+</head>
+<body>
+   
+
+    
+ 
+  
+    <div class="logo">
+       
+      <!-- Your clinic logo goes here -->
+      <!-- Example: <img src="clinic_logo.png" alt="Clinic Logo"> -->
+      <!-- <img src="C:\xampp\htdocs\SakshiProjectSem5\New folder\Capture.JPG" alt="Clinic Logo"> -->
+ 
+
+      
+
+       
+
+    </div>
+             
+
+    
+
+  <nav class="navbar">
+    <a href="#" class="logo" style="color: aliceblue;text-decoration: none;font-size: 30px;margin-left: 20px;font-weight: bolder;"><i class="fa-solid fa-heart-pulse"></i> OneSpotWellness</a>
+    
+      
+    <ul class="navbar-list" >
+      
+      <li class="navbar-item"><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+
+      <li class="navbar-item"><a href="About US.html   "><i class="fas fa-user"></i> About US</a></li>
+       
+
+      <li class="navbar-item dropdown">
+        <a href="services"><i class="fa-solid fa-hand-holding-medical"></i> Services ▾</a>
+        <ul class="dropdown-menu" style="background-color: #2d67a1;text-align: center;">
+          <li><a href="ENT.html">ENT</a></li>
+          <li><a href="Dentistry.html"> Dentistry</a></li>
+          <li><a href="General Medicine.html">General Medicine</a></li>
+          <li><a href="Pediatrician.html">Pediatrician</a></li>
+          <li><a href="Dermatology.html">Dermatology</a></li>
+ 
+           
+           
+          
+        </ul>
+      </li>
+      
+      <li class="navbar-item"><a href="Panel of Doctors.html"><i class="fa-solid fa-user-doctor"></i> Panel of Doctors</a></li>
+      
+
+      <li class="navbar-item"><a href="location.html"><i class="fa-solid fa-location-dot"></i> Location</a></li>
+      <li class="navbar-item"><a href="Contact Us.html"><i class="fas fa-phone"></i> Contact Us</a></li>
+    </ul>
+  </nav>
+  
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./New folder/radiology.jpg" class="d-block w-100" alt="..." style="height: 650px;">
+      </div>
+      <div class="carousel-item ">
+        <img src="./New folder/cour2.jpg" class="d-block w-100" alt="..." style="height: 650px;">
+      </div>
+      <div class="carousel-item">
+        <img src="./New folder/cour3.jpg" class="d-block w-100" alt="..." style="height: 650px;">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+     
+            
+             
+</div>   
+    </div>
+
+    <div class="title-block" >
+      
+      <h1 class="subtitle" style="padding-top: 20px;" >
+      "OneSpotWellness provides you 
+      <br>
+       The best medical treatment"
+      </h1>
+    </div>
+    <div class="block">
+      <img src="./New folder/rubylogo.svg" style="height: 200px; width: 100px; margin-left:700px; padding-top: 1px; margin-top: 2px;">
+      </div>
+    </div>
+
+
+    
+<h1 style="color: #2d82b0; text-align: center;font-style: bolder;">Special Services</h1>
+    <div class="container">
+       <!--card2-->
+      <div class="card">
+        <img src="./New folder/appointment2.jpg" alt="">
+        <div class="intro" >
+          <h4> AppointmentBooking</h4>
+          <p>Booking an Appointment with your doctor/specialist is now easier than ever. You can book an appointment with doctors from various specializations including General Physicians, Dermatologists, Ophthalmologists, ENT specialists, Pediatricians, Psychiatrists etc. No more waiting on the phone for hours or running from pillar to post. Now you can book an appointment online from anywhere, anytime.</p>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <img src="./New folder/health.jpg" alt="">
+        <div class="intro">
+          <h4>Health Chekup</h4>
+          <p>A stitch in time saves 9. With this mantra we urge our customers to undergo period health check-ups before its too late. Book a heath check-up with us anytime for yourself and your family with just a click. Our highly skilled and well trained doctors will have you covered 24x7..</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./New folder/payment.jpg" alt="">
+        <div class="intro">
+          <h4>Online Payment</h4>
+          <p>Not carrying cash? No problem..!! We have you covered with our online payment options. Simply use your credit / debit card or any mode of payment convenient for you and pay hospital bills at ease. Simply carry the receipt of payment at the time of visit and you will have a smooth experience.</p>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="container">
+    <div class="card">
+      <img src="./New folder/doctors.jpg" alt="">
+      <div class="intro" >
+        <h4> Experienced Team</h4>
+        <p>Booking an Appointment with your doctor/specialist is now easier than ever. You can book an appointment with doctors from various specializations including General Physicians, Dermatologists, Ophthalmologists, ENT specialists, Pediatricians, Psychiatrists etc. No more waiting on the phone for hours or running from pillar to post. Now you can book an appointment online from anywhere, anytime.</p>
+      </div>
+    
+    </div>
+
+
+    <div class="card">
+      <img src="./New folder/med.jpg" alt="">
+      <div class="intro" >
+        <h4> Best Medication</h4>
+        <p>Booking an Appointment with your doctor/specialist is now easier than ever. You can book an appointment with doctors from various specializations including General Physicians, Dermatologists, Ophthalmologists, ENT specialists, Pediatricians, Psychiatrists etc. No more waiting on the phone for hours or running from pillar to post. Now you can book an appointment online from anywhere, anytime.</p>
+      </div>
+    
+    </div>
+       </div>
+   
+      
+  
+       <h1 style="color: #2d82b0; text-align: center;font-style: bolder;margin-top: 50px;margin-bottom: 50px;">Our Patients</h1>
+       <div class="slider-container">
+        <div class="card-slider">
+            <div class="card1">
+                <img src="./New folder/Review1.jpeg" alt="Review 1" class="img1">
+                <h2 style="font-size: 20px;">Viran Sharma</h2>
+                <h2 style="font-size: 20px;">I am very thankful to this hospital for curing my father's health problem with his skillful treatment. I really appreciate all the doctors and nursing staff for their commitment.</h2>
+            </div>
+            <div class="card1">
+              <img src="./New folder/Review2.jpeg" alt="Review 1" class="img1">
+              <h2 style="font-size: 20px;">Janvi Patel</h2>
+              <h2 style="font-size: 20px;">Hospital is maintained excellently. No problems for patients. Thanks to Dr.Mallikarjuna & his team for giving greatest service to the patients.</h2>
+          </div>
+            <div class="card1">
+              <img src="./New folder/Review3.jpeg" alt="Review 1" class="img1">
+              <h2 style="font-size: 20px;">Rohan Rathod</h2>
+              <h2 style="font-size: 20px;">I really appreciate all the doctors and nursing staff for their commitment.Excellent services.</h2>
+          </div>
+            <div class="card1">
+              <img src="./New folder/Review4.jpeg" alt="Review 1" class="img1">
+              <h2 style="font-size: 20px;">Shruti Singh</h2>
+              <h2 style="font-size: 20px;">Very advanced hospital with the technology and also doctors….they take care of patients verygood…the entire staff reciveing and treating of the patients is very excellent…</h2>
+          </div>
+        
+        <div class="card1">
+          <img src="./New folder/Review5.jpeg" alt="Review 1" class="img1">
+          <h2 style="font-size: 20px;">Pratham Agarwal</h2>
+          <h2 style="font-size: 20px;">Extremely well maintained hospital with a terrific team of doctors, who leave no stone unturned for a patient and stand by you on the journey to recovery.</h2>
+      </div>
+    
+    <div class="card1">
+      <img src="./New folder/Review6.jpeg" alt="Review 1" class="img1">
+      <h2 style="font-size: 20px;">Shivani Pawar</h2>
+      <h2 style="font-size: 20px;">Nothing to specify in particular. Everything is in good manner. 100% marks when it comes to cleanliness. Never seen such a well maintained hospital.</h2>
+  </div>
+</div>
+        <div class="slider-controls">
+            <button id="prevBtn" style="margin-bottom: 50px;font-size: 30px;background-color:#fff;color: black;"> < </button>
+            <button id="nextBtn" style="margin-bottom: 50px;font-size: 30px;background-color:#fff;color: black;"> > </button>
+        </div>
+    </div>
+
+    <div class="button-container3">
+      <button class="btn-open-form" onclick="toggleReviewForm()">Write a feedback</button>
+  </div>
+
+  <div class="container3" id="review-form">
+      
+      <form action="feedbacks.php" method="post" id="myForm">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="name">Email:</label>
+          <input type="text" id="name" name="email" required>
+          <br>
+
+          <label for="review">Your Feedback:</label>
+          <textarea id="review" name="feedback" required></textarea>
+
+            <button class="btn-submit" type="submit" name="submit">Submit Review</button>
+
+             
+        </div>
+        
+      </form>
+  </div>
+
+  
+
+
+   
+
+  <script>
+      function toggleReviewForm() {
+          var reviewForm = document.getElementById('review-form');
+          if (reviewForm.style.display === 'block') {
+              reviewForm.style.display = 'none';
+          } else {
+              reviewForm.style.display = 'block';
+          }
+      }
+  </script>
+    
+
+
+    <footer>
+      <div class="content">
+        <div class="top">
+          <!-- <div class="logo-details">
+            <i class="fab fa-slack"></i>
+            <span class="logo_name">CodingLab</span>
+          </div> -->
+         
+          <img src=".\New folder\Capture.JPG" style="height: 120px; mix-blend-mode: multiply;display: flex;">
+           <h1 style="font-size:20px ;color: rgb(195, 200, 205);flex-basis: 35%;padding: 20px;">
+           OneSpot Wellness is a healthcare provider, par excellence, fast establishing it self as a global industry model in the tertiary healthcare system of india.
+            in the past 15 years has set new bench marks for standards in the health care industry.
+           </h1>
+          
+          
+          <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="link-boxes">
+          <ul class="box">
+            <li class="link_name">Quick Links</li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="About US.html">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="Panel of Doctors.html">Panel of Doctor</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="Contact Us.html">Contact us</a></li>
+          </ul>
+          <ul class="box">
+            <li class="link_name">Services</li>
+            <li><a href="ENT.html">ENT</a></li>
+            <li><a href="Dentistry.html">DENTISTRY</a></li>
+            <li><a href="General Medicine.html">GENETAL MEDICINE</a></li>
+            <li><a href="Pediatrician.html">PEDIATRICIANCE</a></li>
+            <li><a href="Dermatology.html">DERMATOLOGY</a></li>
+          </ul>
+           
+           <ul class="box input-box">
+            <li class="link_name">Search</li>
+            <li><input type="text" placeholder="Search..."></li>
+            <li><input type="button" value="Search"></li>
+          </ul> 
+        </div>
+      </div>
+      <div class="bottom-details">
+        <div class="bottom_text">
+          <span class="copyright_text">Copyright © 2021 <a href="#">CodingLab.</a>All rights reserved</span>
+          <span class="policy_terms">
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms & condition</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+
+
+    <script>
+
+      const cardSlider = document.querySelector(".card-slider");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const cardWidth = document.querySelector(".card").clientWidth;
+      
+      let slideIndex = 0;
+      
+      prevBtn.addEventListener("click", () => {
+          slideIndex--;
+          if (slideIndex < 0) {
+              slideIndex = 3; // Loop to the last card
+          }
+          updateSlider();
+      });
+      
+      nextBtn.addEventListener("click", () => {
+          slideIndex++;
+          if (slideIndex > 3) {
+              slideIndex = 0; // Loop to the first card
+          }
+          updateSlider();
+      });
+      
+      function updateSlider() {
+          cardSlider.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
+      }
+      
+          </script>
+       
+
+       <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const myForm = document.getElementById("myForm");
+    
+            myForm.addEventListener("submit", function (e) {
+                e.preventDefault(); // Prevent the form from actually submitting
+    
+                // Serialize form data
+                const formData = new FormData(myForm);
+    
+                // Submit form data to the server
+                fetch("http://localhost/SakshiProjectSem5/feedbacks.php", {
+                    method: "POST",
+                    body: formData,
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // Show SweetAlert based on the response from the server
+                        swal("submited successfuly!");
+                    })
+                    .catch((error) => {
+                        swal("submited successfuly!");
+                        
+                        }).then(() => {
+                        // Clear the form after successful submission
+                        myForm.reset();
+                        // window.location.href = "http://localhost/Sem5Project/templates/home.php";
+                    });
+                        console.error("Error:", error);
+                    })
+            });
+    
+    </script>
+      
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+
+<!-- <script src="script.js"></script> -->
+
+
+
+
+
+
+   
+</body>
+</html>
